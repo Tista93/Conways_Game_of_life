@@ -15,12 +15,15 @@ def main():
 	if args.interval:
 		interval = int(args.interval)
 
-	grid = np.array([])
+	# use for different starting forms
+	# grid = np.array([])
 
 	grid = randomGrid(n)
 
 	fig, ax = plt.subplots()
-	img = ax.imshow(grid, interpolation='nearest')
+	# colormap: black -> alive, white -> dead
+	img = ax.imshow(grid, cmap='binary', interpolation='nearest')
+
 	ani = animation.FuncAnimation(fig, update, fargs=(img, grid, n,),
 	                              frames=10,
 	                              interval=interval,
