@@ -5,29 +5,31 @@ from gol_functions import *
 
 # main() function
 def main():
-	args = input_arguments()
-	n = 100
-	interval = 50
 
-	if args.n and int(args.n) > 8:
-		n = int(args.n)
+	arguments = input_arguments()
 
-	if args.interval:
-		interval = int(args.interval)
+	gridsize = int(arguments.gridsize)
+
+	interval = int(arguments.interval)
 
 	# use for different starting forms
-	# grid = np.array([])
 
-	grid = randomGrid(n)
+	grid = randomgrid(gridsize)
 
 	fig, ax = plt.subplots()
 	# colormap: black -> alive, white -> dead
 	img = ax.imshow(grid, cmap='binary', interpolation='nearest')
 
-	ani = animation.FuncAnimation(fig, update, fargs=(img, grid, n,),
+	ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridsize,),
 	                              frames=10,
 	                              interval=interval,
 	                              save_count=50)
+
+	# remove x and y - axis labels, numbers and ticks
+	ax.axes.xaxis.set_ticklabels([])
+	ax.axes.yaxis.set_ticklabels([])
+	plt.xticks([])
+	plt.yticks([])
 
 	plt.show()  # call main
 
