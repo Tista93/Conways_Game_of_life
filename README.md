@@ -51,7 +51,7 @@ the following transitions occur:
    
    a. Update the value of cell (i, j) based on 
       its neighbors, taking into account the 
-      boundary conditions.
+      ***boundary conditions***.
       
    b. Update the display of grid values.
    
