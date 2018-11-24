@@ -44,19 +44,6 @@ simultaneously, and the discrete moment at which this happens is sometimes calle
 Each generation is a pure function of the preceding one.
 The rules continue to be applied repeatedly to create further generations.
 
-
 **The basic grid:**
 
-+-----------------------------+
-|         |         |         |
-|(i-1,j-1)| (i-1,j) |(i-1,j+1)|
-|         |         |         |
-|-----------------------------|
-|         |         |         |
-| (i,j-1) |  (i,j)  | (i, j+1)|
-|         |         |         |
-|-----------------------------|
-|         |         |         |
-|(i+1,j-1)| (i+1,j) |(i+1,j+1)|
-|                             |
-+-----------------------------+
+[TheBasicGrid](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/Game-Of-Life-Diagram.png)
