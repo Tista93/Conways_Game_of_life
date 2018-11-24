@@ -60,7 +60,7 @@ the following transitions occur:
 
 ***"Boundary conditions? What are you talking about?"***
 
-To get a grid of the size n made up of smaller "base grits" we simply need to "fold"
+To get the boundary coniditions to create a grid of the size n made up of smaller "base grits" we simply need to "fold"
 each side to the side parallel to it.
 If we fold the side D to the side B well end up with a cylinder.
 If we then connect the ends of the cylinder (thus connecting side A to C) to each other, 
@@ -68,9 +68,12 @@ we'll end up with a torus.
 
 ![torus](https://user-images.githubusercontent.com/43903037/48967966-a5eca280-efe8-11e8-9703-5863b38b340b.png)
 
-Keep this in mind when thinking about the formula to update the big grid.
+It's kinda like Pac-Man - the top is connected to the bottom and the left is connected to the right.
+Conwey's rules also apply to those connected edges and thus creating the boundary conditions.
+These conditions make the whole thing scaleable.
+If you still have some problems understanding this then I'd suggest you have a look at the *update* function in *golfunc.py*
 
-Enjoy!
+Have fun!
 
 Sources: 
 www.wikipedia.org
