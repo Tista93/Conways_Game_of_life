@@ -65,7 +65,7 @@ To get a grid of the size n made up of smaller "base grits" we simply need to "f
 each side to the side parallel to it.
 If we fold the side D to the side B well end up with a cylinder.
 If we then connect the ends of the cylinder (thus connecting side A to C) to each other, 
-well end up with a torus.
+we'll end up with a torus.
 
 ![torus](https://user-images.githubusercontent.com/43903037/48967966-a5eca280-efe8-11e8-9703-5863b38b340b.png)
 
