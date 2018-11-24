@@ -1,5 +1,5 @@
-### This is a simple implementation of Conway's famous game of life in Python 3.
-# No complicated frameworks were used -> So check this out of you are a beginner/early intermediate
+# This is a simple implementation of Conway's famous game of life in Python 3.
+### No complicated frameworks were used -> So check this out of you are a beginner/early intermediate
 
 
 ** How it works:
