@@ -1,10 +1,14 @@
-# This is a simple implementation of Conway's famous game of life in Python 3.
-### No complicated frameworks were used -> So check this out of you are a beginner/early intermediate
-
+# This is a simple implementation of Conway's GoL in Python 3.
+### No complicated frameworks were used. Easy to understand for beginners and (early) intermediates
 
 ** How it works:
 - There are 2 ways you can use this program by manipulating the code: 
-  1. Either as a command line program with cmdline argument parsing
-  2. Or with a simplified input prompt
+  1. With a simplified input prompt (DEFAULT) 
+  2. Or with command line parsing
+  Choose whichever you prefer.
+
+- You can adjust the size of the grid and the update interval 
+- You can either create a random grid of alive/dead cells or start
+  an empty screen with a predetermend formation to watch its behaviour
   
-  Choose whatever you prefer.
+ Enjoy.
