@@ -1,19 +1,22 @@
-
 import numpy as np
 import argparse
 from collections import namedtuple
 
 ON = 255
 OFF = 0
-vals = (ON, OFF)
+values = (ON, OFF)
 
 def randomgrid(gridsize):
-	"""returns a grid of NxN random values"""
-	return np.random.choice(vals, gridsize*gridsize, p=[0.2, 0.8]).reshape(gridsize, gridsize)
+	"""create a symmetrical grid of the size of gridsize"""
+	return np.random.choice(values, gridsize*gridsize, p=[0.2, 0.8]).reshape(gridsize, gridsize)
 
-def update(frameNum, img, grid, gridsize):
-    """Updates the grid every time it is refreshed"""
+
+def update(frames, img, grid, gridsize):
+    """updates the grid every time it is refreshed"""
+    # create a new grid through copying the passed grid
+    # frames seems unused here but is necessary for funcAnimation to work.
     newgrid = grid.copy()
+
     for i in range(gridsize):
         for j in range(gridsize):
             # this formula considers the edge/boundary conditions that appear
@@ -41,12 +44,25 @@ def update(frameNum, img, grid, gridsize):
 
 
 def add_glider(i, j, grid):
-    """adds a glider with top-left cell at (i, j)"""
-    glider = np.array([[0,    0, 255],
-                       [255,  0, 255],
-                       [0,  255, 255]])
+    """displays a glider for demonstration purposes"""
+    glider = np.array([[0, 0, 255],
+                       [255, 0, 255],
+                       [0, 255, 255]])
 
     grid[i:i+3, j:j+3] = glider
+
+
+def add_beacon(i, j, grid):
+	"""adds a beacon for demonstration purposes"""
+	beacon = np.array([[0,  0,   0,  0, 0, 0],
+                       [0, 255, 255, 0, 0, 0],
+                       [0, 255, 255, 0, 0, 0],
+	                   [0, 0, 0, 255, 255, 0]
+	                   [0, 0, 0, 255, 255, 0]
+	                   [0, 0, 0,  0,   0, 0]
+	                   ])
+
+	grid[i:i+6, j:j+6] = beacon
 
 
 def argument_parser():
@@ -62,8 +78,9 @@ def argument_parser():
 
 	return arguments
 
+
 def input_arguments():
-	"""offers input for settings before the game of life starts"""
+	"""offers user friendly input of the arguments and returns them as a named tuple"""
 	choice = ""
 	arguments = namedtuple("arguments", ["gridsize", "interval", "formationflag"])
 
@@ -73,17 +90,17 @@ def input_arguments():
 
 		if choice == 'y':
 			while True:
-				gridsize = input("\n\t\t Grid size (9 - 1000): ")
+				gridsize = input("\n\t\t Grid size in squares (9 - 270): ")
 
-				if gridsize.isdigit() is False or int(gridsize) < 3 or int(gridsize) > 1000:
+				if gridsize.isdigit() is False or int(gridsize) < 9 or int(gridsize) > 270:
 					print(gridsize.isdigit())
-					print("Error! Please input a valid number (3 - 1000):")
+					print("Error! Please input a valid number (9 - 270):")
 
 				else:
 					break
 
 			while True:
-				interval = input("\n\t\t Interval (1 - 10000): ")
+				interval = input("\n\t\t Interval in miliseconds (1 - 10000): ")
 
 				if interval.isdigit() is False or int(interval) < 1 or int(interval) > 10000:
 					print("Error! Please input a valid number (1 - 10000)")
@@ -91,8 +108,9 @@ def input_arguments():
 				else:
 					break
 
+			# add switch - case like scenario here
 			while True:
-				tmp = input("\n\t\t Add a formation(glider) (y/n):")
+				tmp = input("\n\t\t Add a formation(glider)? (y/n):")
 
 				if tmp == 'y':
 					glider = True
@@ -105,11 +123,10 @@ def input_arguments():
 				else:
 					print("ERROR! Please input again")
 
-			# return named tupel
+			# return namedtupel
 			return arguments(int(gridsize), int(interval), glider)
 
-		# return default values
-		# return default values
-		print("Okay! Returning default parameters(grid = 30, interval = 100)")
-		return arguments(30, 100, False)
+		# if no manual input is wanted - return default values
+		print("Okay! Returning default parameters(grid=30squares, interval=250ms, no glider)")
+		return arguments(30, 250, False)
 		break

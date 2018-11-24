@@ -1,40 +1,41 @@
-import os
-import argparse
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
-
 from golfunc import *
 
+
+# main function
 def main():
 
-	# uncommend this to make the program work via console argument parsing
-    # arguments = argument_parser()
-    # set the arguments
+    # uncomment this to make the program work via console argument parsing
+    # ####arguments = argument_parser()
 
-	# u
+    # comment this out if you want to run the program via command line argument parsing
     arguments = input_arguments()
+
+    # set arguments
     gridsize = int(arguments.gridsize)
     interval = int(arguments.interval)
     formation = arguments.formationflag
 
-    # if you want to start with a formation:
+    # if you want to display a glider for demonstration:
+    # will later implement all the other different shapes.
     if formation:
         grid = np.zeros(gridsize*gridsize).reshape(gridsize, gridsize)
         add_glider(1, 1, grid)
 
-    # else display a randopm grid
+    # else display a random grid
     else:
         grid = randomgrid(gridsize)
 
+    # prepare the plots
     fig, ax = plt.subplots()
 
     # colormap: black -> alive, white -> dead
     img = ax.imshow(grid, cmap='binary', interpolation='nearest')
 
-    # # this will be used to save the animation in a later version
+    # create animation ('ani' will later be used for saving the animation)
     ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridsize,),
-                                  frames=50,
+                                  frames=60,
                                   interval=interval,
                                   save_count=50)
 
@@ -46,6 +47,7 @@ def main():
 
     # plot the animated output
     plt.show()
+
 
 if __name__ == '__main__':
     main()
