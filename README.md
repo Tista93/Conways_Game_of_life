@@ -44,7 +44,7 @@ the following transitions occur:
    ![game-of-life-diagram](https://user-images.githubusercontent.com/43903037/48967944-6756e800-efe8-11e8-8fe4-a49b99b05d89.png)
 
 
-**Approach**
+**Approach:**
 1. Initialize the cells in the grid.
 2. At each time step in the simulation, for each 
    cell (i, j) in the grid, do the following:
