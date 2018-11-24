@@ -72,5 +72,5 @@ Keep this in mind when thinking about the formula to update the big grid.
 Enjoy!
 
 Sources: 
-[wikipedia](www.wikipedia.org) 
-[geeksforgeeks](www.geeksforgeeks.org) 
+wwww.wikipedia.org
+www.geeksforgeeks.org
