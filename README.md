@@ -3,8 +3,8 @@
 
 **How it works:**
 - There are **2** ways you can use this program by manipulating the code: 
-  1. *With a simplified input prompt (DEFAULT) 
-  2. Or with command line parsing*
+  1. *With a simplified input prompt (DEFAULT)* 
+  2. *Or with command line argument parsing*
 
   Choose whichever you prefer.
 
