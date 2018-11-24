@@ -13,7 +13,7 @@
   an empty screen with a **predetermend formation** to watch its behaviour
   *(Currently there is only the glider. More formations will follow)*
   
-
+  
 **Explaination of the theoretical background of Conways Game of Life**
 
 The Game of Life, also known simply as Life, is a cellular automaton 
@@ -29,8 +29,8 @@ The universe of the Game of Life is an infinite, two-dimensional
 orthogonal grid of square cells, each of which is in one of two 
 possible states, alive or dead, (or populated and unpopulated, respectively).
 Every cell interacts with its eight neighbours, which are the cells that 
-are horizontally, vertically, or diagonally adjacent. At each step in time, t
-he following transitions occur:
+are horizontally, vertically, or diagonally adjacent. At each step in time, 
+the following transitions occur:
 
 1. *Any live cell with fewer than two live neighbors dies, as if by underpopulation.*
 2. *Any live cell with two or three live neighbors lives on to the next generation.*
@@ -38,9 +38,11 @@ he following transitions occur:
 4. *Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.*
 
 
+
 **The base grid:**
 
-![game-of-life-diagram](https://user-images.githubusercontent.com/43903037/48967944-6756e800-efe8-11e8-8fe4-a49b99b05d89.png)
+   ![game-of-life-diagram](https://user-images.githubusercontent.com/43903037/48967944-6756e800-efe8-11e8-8fe4-a49b99b05d89.png)
+
 
 **Approach**
 1. Initialize the cells in the grid.
@@ -54,6 +56,8 @@ he following transitions occur:
    b. Update the display of grid values.
    
    
+   
+
 ***"Boundary conditions? What are you talking about?"***
 
 To get a grid of the size n made up of smaller "base grits" we simply need to "fold"
