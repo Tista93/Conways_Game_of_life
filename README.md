@@ -58,7 +58,8 @@ The rules continue to be applied repeatedly to create further generations.
       
    b. Update the display of grid values.
    
-*"Boundary conditions? What are you talking about?"*
+   
+***"Boundary conditions? What are you talking about?"***
 
 To get a grid of the size n made up of smaller "base grits" we simply need to "fold"
 each side to the side parallel to it.
@@ -72,5 +73,5 @@ Keep this in mind when thinking about the formula to update the big grid.
 Enjoy!
 
 Sources: 
-wwww.wikipedia.org
+www.wikipedia.org
 www.geeksforgeeks.org
