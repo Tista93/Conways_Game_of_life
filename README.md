@@ -45,7 +45,8 @@ Each generation is a pure function of the preceding one.
 The rules continue to be applied repeatedly to create further generations.
 
 
-**The basic grid:
+**The basic grid:**
+
 +-----------------------------+
 |         |         |         |
 |(i-1,j-1)| (i-1,j) |(i-1,j+1)|
