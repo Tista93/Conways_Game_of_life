@@ -1,38 +1,52 @@
+import os
+import argparse
+import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+from matplotlib import animation
 
-from gol_functions import *
+from golfunc import *
 
-# main() function
 def main():
 
-	arguments = input_arguments()
+	# uncommend this to make the program work via console argument parsing
+    # arguments = argument_parser()
+    # set the arguments
 
-	gridsize = int(arguments.gridsize)
+	# u
+    arguments = input_arguments()
+    gridsize = int(arguments.gridsize)
+    interval = int(arguments.interval)
+    formation = arguments.formationflag
 
-	interval = int(arguments.interval)
+    # if you want to start with a formation:
+    if formation:
+        grid = np.zeros(gridsize*gridsize).reshape(gridsize, gridsize)
+        add_glider(1, 1, grid)
 
-	# use for different starting forms
+    # else display a randopm grid
+    else:
+        grid = randomgrid(gridsize)
 
-	grid = randomgrid(gridsize)
+    fig, ax = plt.subplots()
 
-	fig, ax = plt.subplots()
-	# colormap: black -> alive, white -> dead
-	img = ax.imshow(grid, cmap='binary', interpolation='nearest')
+    # colormap: black -> alive, white -> dead
+    img = ax.imshow(grid, cmap='binary', interpolation='nearest')
 
-	ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridsize,),
-	                              frames=10,
-	                              interval=interval,
-	                              save_count=50)
+    # # this will be used to save the animation in a later version
+    ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridsize,),
+                                  frames=50,
+                                  interval=interval,
+                                  save_count=50)
 
-	# remove x and y - axis labels, numbers and ticks
-	ax.axes.xaxis.set_ticklabels([])
-	ax.axes.yaxis.set_ticklabels([])
-	plt.xticks([])
-	plt.yticks([])
+    # remove x and y - axis labels, numbers and ticks
+    ax.axes.xaxis.set_ticklabels([])
+    ax.axes.yaxis.set_ticklabels([])
+    plt.xticks([])
+    plt.yticks([])
 
-	plt.show()  # call main
-
+    # plot the animated output
+    plt.show()
 
 if __name__ == '__main__':
-	main()
+    main()
+    print("DONE")
