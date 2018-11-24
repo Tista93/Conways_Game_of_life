@@ -1,5 +1,5 @@
 ## A simple and straightforward implementation of Conway's GoL in Python 3.
-### No complicated frameworks were used. Easy to understand if you know the basics
+### No complicated frameworks were used. Easy to understand for beginners/early intermediates.
 
 **How it works:**
 - There are 2 ways you can run this program by manipulating the code: 
