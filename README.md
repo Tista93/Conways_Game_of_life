@@ -13,7 +13,6 @@
   an empty screen with a **predetermend formation** to watch its behaviour
   *(Currently there is only the glider. More formations will follow)*
   
- Enjoy.
 
 **Explaination of the theoretical background of Conways Game of Life**
 
@@ -44,6 +43,34 @@ simultaneously, and the discrete moment at which this happens is sometimes calle
 Each generation is a pure function of the preceding one.
 The rules continue to be applied repeatedly to create further generations.
 
-**The basic grid:**
+**The base grid:**
 
-[TheBasicGrid](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/Game-Of-Life-Diagram.png)
+![game-of-life-diagram](https://user-images.githubusercontent.com/43903037/48967944-6756e800-efe8-11e8-8fe4-a49b99b05d89.png)
+
+**Approach**
+1. Initialize the cells in the grid.
+2. At each time step in the simulation, for each 
+   cell (i, j) in the grid, do the following:
+   
+   a. Update the value of cell (i, j) based on 
+      its neighbors, taking into account the 
+      boundary conditions.
+      
+   b. Update the display of grid values.
+   
+*"Boundary conditions? What are you talking about?"*
+
+To get a grid of the size n made up of smaller "base grits" we simply need to "fold"
+each side to the side parallel to it.
+If we fold the D to side B well end up with a cylinder.
+If we then connect the ends of the cylinder to each other, well end up with a torus.
+
+![torus](https://user-images.githubusercontent.com/43903037/48967966-a5eca280-efe8-11e8-9703-5863b38b340b.png)
+
+Keep this in mind when thinking about the formula to update the big grid.
+
+Enjoy!
+
+Sources: 
+[wikipedia](www.wikipedia.org) 
+[geeksforgeeks](www.geeksforgeeks.org) 
